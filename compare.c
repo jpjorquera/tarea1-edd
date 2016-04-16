@@ -6,26 +6,20 @@
 #include <string.h>
 
 /*****
-*
-int diferentes
+*	int diferentes
 ******
-*
-busca encontrar la posicion en la que dos strings se diferencian
+*	busca encontrar la posicion en la que dos strings se diferencian
 ******
-*
-Input:
-*
-char * Str1 : Primer String a comparar
-char * Str2 : Segundo String a comparar
-int largo : tamano del String mas corto
-int * pos_dif : almacena valor del lugar en que se diferencian
-*
+*	Input:
+*		char * Str1 : Primer String a comparar
+*		char * Str2 : Segundo String a comparar
+*		int largo : tamano del String mas corto
+*		int * pos_dif : almacena valor del lugar en que se diferencian
 ******
-*
-Returns:
-*
-int, devuelve si se ha encontrado o no alguna diferencia
+*	Returns:
+*		int, devuelve si se ha encontrado o no alguna diferencia
 *****/
+
 int diferentes(char *Str1, char * Str2, int largo, int *pos_dif) {
     int half = largo / 2;
     if (Str1[half] != Str2[half]) {                                     //buscar diferencia en mitad
