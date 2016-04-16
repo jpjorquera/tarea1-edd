@@ -46,6 +46,6 @@ int main (){
     prueba[5] = "estertor";
     prueba[6] = "ese";
     int prefix = pCML(prueba, 7);
-    printf("El prefijo mas largo en comun es de tamano = %d", prefix);
+    printf("El prefijo mas largo en comun es de tamano = %d \n", prefix);
     return 0;
 }
