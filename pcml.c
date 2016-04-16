@@ -1,24 +1,37 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-#include <comparar.h>
+#include "compare.c"
+
+/*****
+*   int pCML
+******
+*   Compara los prefijos entre strings para obtener el mas largo
+******
+*   Input:
+*       char ** S : array de 'strings'
+*       int n : cantidad de strings en S
+******
+*   Returns:
+*       int, retorna el tamano del prefijo mas largo en comun de S
+*****/
 
 int pCML(char **S, int n){
-	int i, j, tam_a, tam_b, corto, iguales, size;				
-	char * mas_largo;					/*Prefijo*/
-	mas_largo = malloc(sizeof(char)*/*x*/)			/*Modificar max por linea*/
-	for (i=0, i<n, i++){					/*Iterar por palabra*/
-		tam_a = strlen(S[i]), tam_b = strlen(S[i+1]);
-		if tam_a <= tamb {				/*Verificar menor*/
-			corto = tam_a;
-		}
-		else {
-			corto = tam_b;
-		}
-		iguales = 1
-	}
-	free(mas_largo);
-	return size;
+    int i, j, mas_largo = 0, tam_menor, tam_pref;
+    for (i=0; i<n; i++){                                            //Iterar para cada string
+        tam_menor = strlen(S[i]);
+        for (j=i+1; j<n; j++) {
+            if (strlen(S[j]) < strlen(S[i])) {                      //Verificar string mas corto
+                tam_menor = strlen(S[i + 1]);
+            }
+            if (diferentes(S[i], S[j], tam_menor, &tam_pref)) {     //Si son diferentes
+                if (tam_pref > mas_largo) {
+                    mas_largo = tam_pref;                           //Comparar con el ya almacenado
+                }
+            }
+            else{                                                   //Si son iguales
+                mas_largo = tam_menor;
+            }
+        }
+    }
+    return mas_largo;
 }
-
-
